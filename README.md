@@ -15,18 +15,43 @@ A Python tool to clean and restructure PDF books for optimal use with Text-to-Sp
 
 ## Usage
 
-1.  Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+### 1. Setup
+*   Place your source PDFs in the `input/` folder.
+*   (Optional) Create a configuration file in `configs/` for each book if you need custom chapter titles (see `configs/template.json`).
 
-2.  Run the processor:
-    ```bash
-    python processor.py
-    ```
+### 2. Run
+Run the processor to clean all PDFs in the input folder:
 
-   *Note: Modify `CHAPTER_CONFIG` in `processor.py` to match your specific book's structure.*
+```bash
+python processor.py
+```
 
-## Output
+Arguments:
+*   `--input_dir`: Directory containing source PDFs (default: `input`)
+*   `--output_dir`: Directory to save cleaned PDFs (default: `output`)
+*   `--config_dir`: Directory containing JSON configs (default: `configs`)
 
-The script generates `Cleaned_Audiobook_Final_v3.pdf` (or similar versioned output), ready for TTS import.
+### 3. Output
+Cleaned PDFs will be saved to `output/` with `_cleaned` appended to the filename.
+The script will print the number of footnotes removed for each book.
+
+## Configuration
+To handle different chapter structures, create a JSON file in `configs/` that matches your PDF's filename.
+
+**Example (`configs/mybook.json`):**
+```json
+{
+    "metadata": {
+        "title": "My Book Title",
+        "author": "Author Name",
+        "filename_pattern": "Unique Part of Filename"
+    },
+    "settings": {
+        "toc_end_page": 10
+    },
+    "chapters": [
+        {"part": "Part 1", "num": "1", "title": "Chapter One"},
+        {"part": "Part 1", "num": "2", "title": "Chapter Two"}
+    ]
+}
+```

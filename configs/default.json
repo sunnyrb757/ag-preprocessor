@@ -1,0 +1,25 @@
+{
+    "metadata": {
+        "title": "Unknown Book",
+        "author": "Unknown Author",
+        "filename_pattern": "default"
+    },
+    "settings": {
+        "toc_end_page": 10,
+        "header_margin": 60,
+        "footer_margin": 60,
+        "footnote_size_thresh": 9.0
+    },
+    "chapters": [
+        {
+            "part": "Part 1",
+            "num": "1",
+            "title": "Introduction"
+        },
+        {
+            "part": "Part 1",
+            "num": "2",
+            "title": "Chapter 1"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "metadata": {
+        "title": "Book Title",
+        "author": "Author Name",
+        "filename_pattern": "unique_substring_of_filename"
+    },
+    "settings": {
+        "toc_end_page": 10,
+        "header_margin": 60,
+        "footer_margin": 60,
+        "footnote_size_thresh": 9.0
+    },
+    "chapters": [
+        {
+            "part": "Front",
+            "num": "0",
+            "title": "Preface",
+            "special_type": "preface"
+        },
+        {
+            "part": "Part 1",
+            "num": "1",
+            "title": "Chapter One Title"
+        },
+        {
+            "part": "Part 1",
+            "num": "2",
+            "title": "Chapter Two Title"
+        }
+    ]
+}
