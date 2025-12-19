@@ -53,6 +53,7 @@ class PDFPreprocessor:
         self.header_margin = 60
         self.footer_margin = 60
         self.footnote_size_thresh = 9.0
+        self.footnote_count = 0
 
     def find_chapter_start(self, title_fragment, start_search_idx):
         """Scans pages to find the first occurrence of the title fragment"""
@@ -163,6 +164,7 @@ class PDFPreprocessor:
                 for span in line["spans"]:
                     # 2. Size Filter
                     if span["size"] < self.footnote_size_thresh:
+                        self.footnote_count += 1
                         continue
                     line_text_parts.append(span["text"])
                 
@@ -209,6 +211,7 @@ class PDFPreprocessor:
                 txt = self.process_page_content(self.doc[i], chapter_context=chap)
                 if txt: chap.content.append(txt)
                 
+        print(f"Total footnotes removed: {self.footnote_count}")
         self.export_pdf("Cleaned_Audiobook_Final_v3.pdf")
 
     def export_pdf(self, path):
