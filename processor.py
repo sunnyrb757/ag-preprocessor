@@ -82,11 +82,23 @@ class PDFPreprocessor:
                 return i
         return None
 
-    def find_bibliography_start(self, start_search_idx):
+    def find_end_matter_start(self, start_search_idx):
+        end_markers = ["BIBLIOGRAPHY", "NOTES", "ENDNOTES", "INDEX", "WORKS CITED", "REFERENCES", "SELECT BIBLIOGRAPHY"]
+        
         for i in range(start_search_idx, len(self.doc)):
-            text = self.doc[i].get_text("text").upper()
-            if "BIBLIOGRAPHY" in text and len(text) < 1000: # Title page usually short-ish or top of page
-                return i
+            # Get first few lines of text to check for header
+            page_text = self.doc[i].get_text("text")
+            if not page_text: continue
+            
+            # Check just the top part of the page (heuristic)
+            header_candidate = page_text[:200].upper()
+            
+            for marker in end_markers:
+                # Check for exact line match or isolated header
+                if marker in header_candidate:
+                    # Verify it's alone on the line or very prominent
+                    # (Simple check: if the marker appears in the first 200 chars)
+                    return i
         return len(self.doc)
 
     def locate_chapters(self):
@@ -127,12 +139,12 @@ class PDFPreprocessor:
                 else:
                     print(f"  [ERROR] Could not find chapter: {config['title']}")
         
-        # Find Bibliography to close the last chapter
-        bib_idx = self.find_bibliography_start(current_search_idx)
-        print(f"  Found Bibliography at Page {bib_idx} (Physical {bib_idx+1})")
+        # Find End Matter to close the last chapter
+        end_idx = self.find_end_matter_start(current_search_idx)
+        print(f"  Found End Matter at Page {end_idx} (Physical {end_idx+1})")
         
         if self.chapters:
-            self.chapters[-1].end_page_idx = bib_idx
+            self.chapters[-1].end_page_idx = end_idx
 
     def process_page_content(self, page, chapter_context=None):
         blocks = page.get_text("dict")["blocks"]
