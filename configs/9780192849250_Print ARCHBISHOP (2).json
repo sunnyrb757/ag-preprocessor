@@ -1,0 +1,25 @@
+{
+    "metadata": {
+        "title": "9780192849250 Print ARCHBISHOP (2)",
+        "author": "Unknown",
+        "filename_pattern": "9780192849250_Print ARCHBISHOP (2)"
+    },
+    "settings": {
+        "toc_end_page": 9,
+        "header_margin": 60,
+        "footer_margin": 60,
+        "footnote_size_thresh": 9.0
+    },
+    "chapters": [
+        {
+            "part": "Part 1",
+            "num": "1",
+            "title": "ARCHBISHOP\b"
+        },
+        {
+            "part": "Part 1",
+            "num": "2",
+            "title": "Explanatory Notes \b"
+        }
+    ]
+}

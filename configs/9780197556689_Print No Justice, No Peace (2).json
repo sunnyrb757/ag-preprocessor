@@ -1,0 +1,65 @@
+{
+    "metadata": {
+        "title": "9780197556689 Print No Justice, No Peace (2)",
+        "author": "Unknown",
+        "filename_pattern": "9780197556689_Print No Justice, No Peace (2)"
+    },
+    "settings": {
+        "toc_end_page": 7,
+        "header_margin": 60,
+        "footer_margin": 60,
+        "footnote_size_thresh": 9.0
+    },
+    "chapters": [
+        {
+            "part": "Part 1",
+            "num": "1",
+            "title": "1.\t Introduction\b"
+        },
+        {
+            "part": "Part 1",
+            "num": "2",
+            "title": "2.\t What Violent Protestors Want\b"
+        },
+        {
+            "part": "Part 1",
+            "num": "3",
+            "title": "3.\t Justifying Protective Harm\b"
+        },
+        {
+            "part": "Part 1",
+            "num": "4",
+            "title": "4.\t The Necessity and Effectiveness of Violence\b"
+        },
+        {
+            "part": "Part 1",
+            "num": "5",
+            "title": "5.\t The Moral Seriousness of Harm to Police Officers\b"
+        },
+        {
+            "part": "Part 1",
+            "num": "6",
+            "title": "6.\t Harm to Fellow Citizens\b"
+        },
+        {
+            "part": "Part 1",
+            "num": "7",
+            "title": "7.\t Redistributing Protective Harm\b"
+        },
+        {
+            "part": "Part 1",
+            "num": "8",
+            "title": "8.\t Assessing Violent Protests\b"
+        },
+        {
+            "part": "Part 1",
+            "num": "9",
+            "title": "9.\t Responding to Violent Protestors\b"
+        },
+        {
+            "part": "Part 1",
+            "num": "10",
+            "title": "10.\t Conclusions\b"
+        }
+    ]
+}

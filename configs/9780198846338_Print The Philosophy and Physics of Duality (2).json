@@ -1,0 +1,480 @@
+{
+    "metadata": {
+        "title": "9780198846338 Print The Philosophy and Physics of Duality (2)",
+        "author": "Unknown",
+        "filename_pattern": "9780198846338_Print The Philosophy and Physics of Duality (2)"
+    },
+    "settings": {
+        "toc_end_page": 9,
+        "header_margin": 60,
+        "footer_margin": 60,
+        "footnote_size_thresh": 9.0
+    },
+    "chapters": [
+        {
+            "part": "Part 1",
+            "num": "1",
+            "title": "1. Introduction"
+        },
+        {
+            "part": "Part 1",
+            "num": "2",
+            "title": "1.1 Dualities in physics and philosophy"
+        },
+        {
+            "part": "Part 1",
+            "num": "5",
+            "title": "1.2 Philosophy and physics: friends or foes?"
+        },
+        {
+            "part": "Part 1",
+            "num": "6",
+            "title": "1.3 Prospectus"
+        },
+        {
+            "part": "Part 1",
+            "num": "7",
+            "title": "1.3.1 Three ways to read this book"
+        },
+        {
+            "part": "Part 1",
+            "num": "8",
+            "title": "1.3.2 Chapter-by-chapter prospectus"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "9",
+            "title": "2. Theories, interpretations, and symmetries"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "10",
+            "title": "2.1 Theories and models"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "11",
+            "title": "2.1.1 \u2018Theory\u2019 and \u2018model\u2019 in science and philosophy"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "12",
+            "title": "2.2 Theories and models in this book"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "13",
+            "title": "2.2.1 Our usage of \u2018theory\u2019 and \u2018model\u2019"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "14",
+            "title": "2.2.2 \u2018Model root\u2019 and \u2018specific structure\u2019\u2014distinguished"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "15",
+            "title": "2.2.3 Values of quantities on states; dynamics"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "16",
+            "title": "2.3 Interpretations of theories and models"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "17",
+            "title": "2.3.1 Referential semantics"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "18",
+            "title": "2.3.2 Varieties of scientific realism; postponed"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "19",
+            "title": "2.3.3 Intensional semantics"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "21",
+            "title": "2.4 Symmetries"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "22",
+            "title": "2.4.1 The idea of symmetry"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "23",
+            "title": "2.4.2 Salient quantities and states: stipulated symmetries"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "24",
+            "title": "2.4.3 Dynamical symmetries"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "25",
+            "title": "2.4.4 Spacetime theories and their symmetries"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "26",
+            "title": "2.4.5 Galilean transformations"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "27",
+            "title": "2.5 Conclusion"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "28",
+            "title": "3. Duality as isomorphism"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "29",
+            "title": "3.1 The isomorphism defined"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "30",
+            "title": "3.2 Duality and theoretical equivalence"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "31",
+            "title": "3.2.1 What determines theoretical equivalence?"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "32",
+            "title": "3.2.2 Epistemic considerations postponed"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "33",
+            "title": "3.3 Duality and symmetry"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "34",
+            "title": "3.4 Themes, roles, and types"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "35",
+            "title": "3.4.1 Themes associated with dualities"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "36",
+            "title": "3.4.2 Roles of dualities"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "37",
+            "title": "3.4.3 Special types of dualities"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "38",
+            "title": "3.5 Comparison with other philosophical work on dualities"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "39",
+            "title": "3.5.1 Four issues"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "40",
+            "title": "3.5.2 Theoretical equivalence"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "41",
+            "title": "3.5.3 Under-developed and specific topics"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "42",
+            "title": "3.6 Conclusion"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "43",
+            "title": "4. Simple examples"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "44",
+            "title": "4.1 Position-momentum duality in quantum mechanics"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "45",
+            "title": "4.1.1 Introduction: Hilbert spaces"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "46",
+            "title": "4.1.2 Fourier transformation as duality"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "47",
+            "title": "4.1.3 Illustrating the Schema"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "48",
+            "title": "4.2 Wave-particle duality"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "49",
+            "title": "4.2.1 \u2018Dualism\u2019 and matrix vs. wave mechanics"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "50",
+            "title": "4.2.2 Complementarity"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "51",
+            "title": "4.2.3 Duality and complementarity: same or different?"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "52",
+            "title": "4.3 Classical electric-magnetic duality"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "53",
+            "title": "4.3.1 Duality and the Maxwell equations"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "55",
+            "title": "4.3.3 Faraday tensor formulation and Hodge duality"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "56",
+            "title": "4.3.4 Illustrating the Schema for Hodge duality"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "57",
+            "title": "4.3.5 A quantum duality: Dirac\u2019s monopole"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "58",
+            "title": "4.4 Kramers\u2013Wannier duality in statistical mechanics"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "60",
+            "title": "4.4.2 Spin-dislocation duality and disorder parameters"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "62",
+            "title": "4.5 Conclusion"
+        },
+        {
+            "part": "Part I. A Schema For Dualities",
+            "num": "63",
+            "title": "Appendix 4.A Dual partition function and dislocations"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "64",
+            "title": "5. Particle-soliton dualities"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "65",
+            "title": "5.1 Dualities between bosons and fermions"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "66",
+            "title": "5.1.1 Sine-Gordon\u2013Thirring duality"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "67",
+            "title": "5.1.2 Bosonization"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "68",
+            "title": "5.2 Particle-vortex duality"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "69",
+            "title": "5.2.1 Vortex solutions of classical field theory"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "70",
+            "title": "5.2.2 Particle-vortex duality for the Abelian Higgs model"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "71",
+            "title": "5.3 Electric-magnetic duality in four dimensions"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "72",
+            "title": "5.3.1 Classical duality between models"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "73",
+            "title": "5.3.2 A Quantum Duality"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "74",
+            "title": "5.4 Conclusion"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "75",
+            "title": "6. Quark confinement as dual superconductivity"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "76",
+            "title": "6.1 On the topological phases of matter"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "77",
+            "title": "6.1.1 Solitons and duality in statistical physics"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "80",
+            "title": "6.2 Superconductivity and the Higgs mechanism"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "82",
+            "title": "6.2.2 Strings from vortices in superconductors"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "83",
+            "title": "6.3 Confinement as dual superconductivity"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "84",
+            "title": "6.3.1 Condensation of monopoles"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "85",
+            "title": "6.3.2 Wilson loops as magnetic order parameters"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "86",
+            "title": "6.3.3 Phases of gauge theories"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "87",
+            "title": "6.4 Conclusion"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "88",
+            "title": "7. Electric-magnetic duality in Yang\u2013Mills theories"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "89",
+            "title": "7.1 Magnetic monopoles in Yang\u2013Mills theories"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "90",
+            "title": "7.1.1 Motivating the \u2019t Hooft\u2013Polyakov monopole"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "91",
+            "title": "7.1.2 The Georgi\u2013Glashow model"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "92",
+            "title": "7.1.3 Vacuum solutions"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "93",
+            "title": "7.1.4 The \u2019t Hooft\u2013Polyakov monopole solution"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "95",
+            "title": "7.2 The Montonen\u2013Olive duality conjecture"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "96",
+            "title": "7.3 A brief overview of supersymmetry"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "97",
+            "title": "7.4 Duality of N =4 supersymmetric Yang-Mills theory"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "98",
+            "title": "7.5 Effective duality of N =2 supersymmetric Yang-Mills theory"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "99",
+            "title": "7.5.1 Effective duality and the Wilsonian effective action"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "100",
+            "title": "7.5.2 Details of the Seiberg\u2013Witten theory"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "101",
+            "title": "7.5.3 Dual effective action"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "102",
+            "title": "7.5.4 Physical signficance of the singularities"
+        },
+        {
+            "part": "Part Ii. Advanced E X Amples Of Dualities",
+            "num": "103",
+            "title": "7.5.5 The dual model"
+        }
+    ]
+}

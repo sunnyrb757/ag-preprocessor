@@ -27,4 +27,4 @@ if __name__ == "__main__":
         pages = [int(p) for p in sys.argv[1:]]
         
     for p in pages:
-        inspect_page("9780190082277_Print Christianity and Migration (2).pdf", p)
+        inspect_page("input/9780197556689_Print No Justice, No Peace (2).pdf", p)
