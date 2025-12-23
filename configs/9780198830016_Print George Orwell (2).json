@@ -1,75 +1,81 @@
 {
     "metadata": {
-        "title": "9780198830016 Print George Orwell (2)",
-        "author": "Unknown",
-        "filename_pattern": "9780198830016_Print George Orwell (2)"
+        "title": "George Orwell",
+        "author": "Robert Colls",
+        "filename_pattern": "9780198830016"
     },
     "settings": {
-        "toc_end_page": 11,
+        "toc_end_page": 9,
         "header_margin": 60,
         "footer_margin": 60,
-        "footnote_size_thresh": 9.0
+        "footnote_size_thresh": 8.5
     },
     "chapters": [
         {
-            "part": "Part 1",
+            "num": "0",
+            "title": "Preface: Orwell in his own words",
+            "search_text": "PREFACE: ORWELL",
+            "start_page_hint": 10
+        },
+        {
             "num": "1",
-            "title": "1911\u20131927\b"
+            "title": "King's Scholar, Burma Sergeant, 1911–1927",
+            "search_text": "King's Scholar",
+            "start_page_hint": 1
         },
         {
-            "part": "Part 1",
             "num": "2",
-            "title": "2 Tramp Writer, 1928\u20131935 \b"
+            "title": "Tramp Writer, 1928–1935",
+            "search_text": "Tramp Writer",
+            "start_page_hint": 16
         },
         {
-            "part": "Part 1",
             "num": "3",
-            "title": "3 Down the Pit and Up Again, 1936\b"
+            "title": "Down the Pit and Up Again, 1936",
+            "search_text": "Down the Pit",
+            "start_page_hint": 29
         },
         {
-            "part": "Part 1",
             "num": "4",
-            "title": "4 Into Spain and Out Again, 1937 \b"
+            "title": "Into Spain and Out Again, 1937",
+            "search_text": "Into Spain and Out",
+            "start_page_hint": 58
         },
         {
-            "part": "Part 1",
             "num": "5",
-            "title": "5 Man of the People, 1939\u20131945 \b"
+            "title": "Man of the People, 1939–1945",
+            "search_text": "Man of the People",
+            "start_page_hint": 60
         },
         {
-            "part": "Part 1",
             "num": "6",
-            "title": "1941\u20131945 \b"
+            "title": "Stepping Up and Stepping Out, 1941–1945",
+            "search_text": "Stepping Up and Stepping Out",
+            "start_page_hint": 83
         },
         {
-            "part": "Part 1",
             "num": "7",
-            "title": "7 Husbandom\b"
+            "title": "Husbandom",
+            "search_text": "Husbandom",
+            "start_page_hint": 103
         },
         {
-            "part": "Part 1",
             "num": "8",
-            "title": "8 Famous Writer, 1946\u20131950\b"
+            "title": "Famous Writer, 1946–1950",
+            "search_text": "Famous Writer",
+            "start_page_hint": 125
         },
         {
-            "part": "Part 1",
             "num": "9",
-            "title": "9 Legacy \b"
+            "title": "Legacy",
+            "search_text": "Legacy",
+            "start_page_hint": 149
         },
         {
-            "part": "Part 1",
             "num": "10",
-            "title": "10 The Point of Being Orwell \b"
-        },
-        {
-            "part": "Part 1",
-            "num": "11",
-            "title": "most people who are educated there. From 1922 to"
-        },
-        {
-            "part": "Part 1",
-            "num": "12",
-            "title": "I\u00a0knew nobody and at first could get no footing. During"
+            "title": "The Point of Being Orwell",
+            "search_text": "The Point of Being Orwell",
+            "start_page_hint": 156
         }
     ]
 }
