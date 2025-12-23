@@ -1,90 +1,91 @@
 {
     "metadata": {
-        "title": "9780190082277 Print Christianity and Migration (2)",
-        "author": "Unknown",
-        "filename_pattern": "9780190082277_Print Christianity and Migration (2)"
+        "title": "Christianity and Migration",
+        "author": "Peter C. Phan",
+        "filename_pattern": "9780190082277",
+        "project_name": "Christianity and Migration"
     },
     "settings": {
-        "toc_end_page": 9,
+        "toc_end_page": 8,
         "header_margin": 60,
         "footer_margin": 60,
         "footnote_size_thresh": 9.0
     },
     "chapters": [
         {
-            "part": "Part I. Migr Ation And Religion:",
+            "num": "0",
+            "title": "Preface",
+            "start_page_hint": 8
+        },
+        {
             "num": "1",
-            "title": "Christian Faith\b"
+            "title": "Christian Theology in the Age of Migration",
+            "start_page_hint": 12
         },
         {
-            "part": "Part I. Migr Ation And Religion:",
             "num": "2",
-            "title": "Being Human\b"
+            "title": "Human Mobility and Global Migrations",
+            "start_page_hint": 35
         },
         {
-            "part": "Part I. Migr Ation And Religion:",
             "num": "3",
-            "title": "Migration\b"
+            "title": "Categories of Migration and Types of Migrants",
+            "start_page_hint": 73
         },
         {
-            "part": "Part I. Migr Ation And Religion:",
             "num": "4",
-            "title": "Migration and How Migration Transforms Religions\b"
+            "title": "Religion(s) and Migration",
+            "start_page_hint": 94
         },
         {
-            "part": "Part I. Migr Ation And Religion:",
             "num": "5",
-            "title": "into a Global Religion\b"
+            "title": "Migration and the Shaping of World Christianity",
+            "start_page_hint": 141
         },
         {
-            "part": "Part Ii. A Christian Theology Of Migr Ation",
             "num": "6",
-            "title": "Deus Migrator, the Beginning and the End of Migration\b"
+            "title": "God the Father, the Primordial Migrant",
+            "start_page_hint": 186
         },
         {
-            "part": "Part Ii. A Christian Theology Of Migr Ation",
             "num": "7",
-            "title": "Jesus the Paradigmatic Migrant\b"
+            "title": "A Christology for Our Age of Migration",
+            "start_page_hint": 231
         },
         {
-            "part": "Part Ii. A Christian Theology Of Migr Ation",
             "num": "8",
-            "title": "The Agency of Migrants\b"
+            "title": "The Holy Spirit, the Power of Migration",
+            "start_page_hint": 265
         },
         {
-            "part": "Part Ii. A Christian Theology Of Migr Ation",
             "num": "9",
-            "title": "A Church Existing in the Interstices\b"
+            "title": "Christianity as an Institutional Migrant",
+            "start_page_hint": 289
         },
         {
-            "part": "Part Ii. A Christian Theology Of Migr Ation",
             "num": "10",
-            "title": "Sacramental and Devotional Life of Migrants\b"
+            "title": "Worship and Popular Devotions",
+            "start_page_hint": 310
         },
         {
-            "part": "Part Ii. A Christian Theology Of Migr Ation",
             "num": "11",
-            "title": "Guests and Hosts\b"
+            "title": "The Ethics of Mutual Hospitality",
+            "start_page_hint": 338
         },
         {
-            "part": "Part Ii. A Christian Theology Of Migr Ation",
             "num": "12",
-            "title": "A Christian Theology of Place in Migration\b"
+            "title": "Home Land, Foreign Land, Our Land",
+            "start_page_hint": 378
         },
         {
-            "part": "Part Ii. A Christian Theology Of Migr Ation",
             "num": "13",
-            "title": "Remember\b"
+            "title": "Migration and Memory",
+            "start_page_hint": 392
         },
         {
-            "part": "Part Ii. A Christian Theology Of Migr Ation",
             "num": "14",
-            "title": "Eschatology\b"
-        },
-        {
-            "part": "Part Ii. A Christian Theology Of Migr Ation",
-            "num": "15",
-            "title": "The second event was my voluntary migration to Italy at the end of"
+            "title": "Epilogue: People on the Move",
+            "start_page_hint": 409
         }
     ]
 }

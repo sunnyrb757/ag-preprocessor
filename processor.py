@@ -244,7 +244,7 @@ class PDFPreprocessor:
                 
                 if line_text_parts:
                     # Clean soft hyphens
-                    line_text_parts = [p.replace('\xad', '').replace('\u00ad', '') for p in line_text_parts]
+                    line_text_parts = [p.replace('', '') for p in line_text_parts]
                     full_line = " ".join(line_text_parts).strip()
                     
                     # NORMALIZE HERE
@@ -283,7 +283,7 @@ class PDFPreprocessor:
             
             if block_content:
                 # clean_text.append(" ".join(block_content))
-                clean_text.append(self.smart_join(block_content))
+                clean_text.append(self.smart_join(block_content).replace('\u00ad', '').replace('\xad', ''))
                 
         return "\n\n".join(clean_text)
 
