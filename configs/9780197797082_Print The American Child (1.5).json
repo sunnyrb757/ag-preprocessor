@@ -1,0 +1,93 @@
+{
+    "metadata": {
+        "title": "The American Child",
+        "author": "Steven Mintz and Peter N. Stearns",
+        "filename_pattern": "9780197797082"
+    },
+    "settings": {
+        "toc_end_page": 6,
+        "header_margin": 20,
+        "footer_margin": 60,
+        "footnote_size_thresh": 7.0
+    },
+    "chapters": [
+        {
+            "num": "0",
+            "title": "Preface",
+            "search_text": "Preface",
+            "start_page_hint": 7
+        },
+        {
+            "num": "1",
+            "title": "A New Childhood and New Problems",
+            "search_text": "A New Childhood",
+            "start_page_hint": 9
+        },
+        {
+            "num": "2",
+            "title": "A Changing Childhood in Historical Perspective",
+            "search_text": "A Changing Childhood",
+            "start_page_hint": 16
+        },
+        {
+            "num": "3",
+            "title": "The Fragile Child: A Theme in Contemporary Childhood",
+            "search_text": "The Fragile Child",
+            "start_page_hint": 28
+        },
+        {
+            "num": "4",
+            "title": "Diversity and Inequality in American Childhood Since World War II",
+            "search_text": "Diversity and Inequality",
+            "start_page_hint": 55
+        },
+        {
+            "num": "5",
+            "title": "More Schooling. Less Joy?",
+            "search_text": "More Schooling. Less Joy?",
+            "start_page_hint": 89
+        },
+        {
+            "num": "6",
+            "title": "Children in a Changing Family",
+            "search_text": "Children in a Changing Family",
+            "start_page_hint": 124
+        },
+        {
+            "num": "7",
+            "title": "The Decline of Children’s Play—and the New Alternatives",
+            "search_text": "The Decline of Children’s Play",
+            "start_page_hint": 152
+        },
+        {
+            "num": "8",
+            "title": "The Changing Face of Children’s Culture",
+            "search_text": "The Changing Face",
+            "start_page_hint": 177
+        },
+        {
+            "num": "9",
+            "title": "The New Neurodevelopmental, Emotional, and Behavioral Disorders of Childhood",
+            "search_text": "The New Neuro",
+            "start_page_hint": 200
+        },
+        {
+            "num": "10",
+            "title": "Anxious Children",
+            "search_text": "Anxious Children",
+            "start_page_hint": 220
+        },
+        {
+            "num": "11",
+            "title": "The Impact of the New Disorders",
+            "search_text": "The Impact of the New Disorders",
+            "start_page_hint": 235
+        },
+        {
+            "num": "12",
+            "title": "Facing Up to Contemporary Childhood",
+            "search_text": "Facing Up to Contemporary Childhood",
+            "start_page_hint": 246
+        }
+    ]
+}

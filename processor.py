@@ -18,10 +18,16 @@ class Chapter:
         self.title = config["title"]
         if config.get("special_type") == "preface":
             self.full_header = "Preface"
+        elif config.get("special_type") == "introduction":
+            self.full_header = "Introduction"
         elif config.get("special_type") == "front_matter":
             self.full_header = "Title Page & Table of Contents"
         else:
-            self.full_header = f"{config['part']} - {config['num']}. {config['title']}"
+            part = config.get('part', '')
+            if part:
+                self.full_header = f"{part} - {config['num']}. {config['title']}"
+            else:
+                self.full_header = f"{config['num']}. {config['title']}"
         self.start_page_idx = start_page_idx
         self.end_page_idx = end_page_idx
         self.content = []
@@ -51,35 +57,91 @@ class PDFPreprocessor:
         # 2. Explicitly remove common PDF artifacts
         replacements = {
             '\u200b': '',  # Zero-width space
-            '\u00ad': '',  # Soft hyphen
+            # '\u00ad': '',  # Soft hyphen - REMOVED: Handled in context to allow de-hyphenation
             '\u2011': '-', # Non-breaking hyphen
             '\u202f': ' ', # Narrow non-breaking space
             '\u00a0': ' ', # Non-breaking space
             '\uf0b7': '-', # Bullet points (sometimes)
             '\u2013': '-', # En dash
+            '\u2013': '-', # En dash
             '\u2014': '-', # Em dash
+            '*': '',       # Asterisk footnotes
+            '†': '',       # Dagger footnotes (just in case)
         }
         for src, dest in replacements.items():
             text = text.replace(src, dest)
             
-        # 3. Strip excessive whitespace created by replacements
+        # 3. Regex Filter: Embedded Footnotes (e.g. "word.7", "word7", "word’.7")
+        # Matches digits immediately following letters or punctuation (excluding decimal points/separators)
+        # Strategy: 
+        #   (a) Digits after letters/quotes: (?<=[a-zA-Z\u2019\u201d])\d+
+        #   (b) Digits after punctuation (.,;?!) IF NOT preceded by digit (protects 3.5, 1,000): (?<=(?<!\d)[.,;?!])\d+
+        # Note: We rely on the fact that footnotes usually don't have spaces before them, 
+        # unlike legitimate numbers "Page 1", "Year 1850".
+        footer_regex = r'(?<=[a-zA-Z\u2019\u201d])\d+(?=\s|$)|(?<=(?<!\d)[.,;?!])\d+(?=\s|$)'
+        text = re.sub(footer_regex, '', text)
+
+        # 4. Strip excessive whitespace created by replacements
         return re.sub(r'\s+', ' ', text).strip()
 
-    def find_chapter_start(self, title_fragment, start_search_idx):
+    def find_chapter_start(self, title_fragment, start_search_idx, strict_mode=False):
         """Scans pages to find the first occurrence of the title fragment"""
-        # Normalize title fragment for search (remove punctuation, upper case, normalize space)
-        target = re.sub(r'[^\w\s]', '', title_fragment).upper()
-        target = re.sub(r'\s+', ' ', target).strip()
+        # Normalize target
+        if strict_mode:
+            target = title_fragment # Already normalized or specific
+             
+            # Handle multi-line search text
+            if target and '\n' in target:
+                subtargets = [re.sub(r'[^\w\s]', '', t).upper().strip() for t in target.split('\n')]
+                
+                for i in range(start_search_idx, len(self.doc)):
+                    try:
+                        text = self.doc[i].get_text("text")
+                    except:
+                        continue
+                    lines = text.split('\n')
+                    
+                    for j, line in enumerate(lines):
+                        clean_line = re.sub(r'[^\w\s]', '', line).upper().strip()
+                        if clean_line == subtargets[0]:
+                            match = True
+                            for k in range(1, len(subtargets)):
+                                if j + k >= len(lines):
+                                    match = False
+                                    break
+                                next_clean = re.sub(r'[^\w\s]', '', lines[j+k]).upper().strip()
+                                if next_clean != subtargets[k]:
+                                    match = False
+                                    break
+                            if match:
+                                return i
+                return None
+                
+            # Single line strict
+            target = re.sub(r'[^\w\s]', '', target).upper()
+            target = re.sub(r'\s+', ' ', target).strip()
+        else:
+            target = re.sub(r'[^\w\s]', '', title_fragment).upper()
+            target = re.sub(r'\s+', ' ', target).strip()
         
         for i in range(start_search_idx, len(self.doc)):
             # Get text from page
             text = self.doc[i].get_text("text")
-            clean_text = re.sub(r'[^\w\s]', '', text).upper()
-            clean_text = re.sub(r'\s+', ' ', clean_text).strip()
             
-            # Check match using simplified string
-            if target in clean_text:
-                return i
+            if strict_mode:
+                # Line-by-line exact check
+                lines = text.split('\n')
+                for line in lines:
+                    clean_line = re.sub(r'[^\w\s]', '', line).upper()
+                    clean_line = re.sub(r'\s+', ' ', clean_line).strip()
+                    if clean_line == target or (len(target) > 10 and clean_line.startswith(target)):
+                        return i
+            else:
+                # Original fuzzy blob check
+                clean_text = re.sub(r'[^\w\s]', '', text).upper()
+                clean_text = re.sub(r'\s+', ' ', clean_text).strip()
+                if target in clean_text:
+                    return i
         return None
 
     def find_end_matter_start(self, start_search_idx):
@@ -113,14 +175,25 @@ class PDFPreprocessor:
                 self.chapters.append(Chapter(config, 0))
                 continue
             
+            # Use hint if provided (Critical for skipping running heads)
+            if config.get("start_page_hint"):
+                # Convert printed page to potential physical page (heuristic +15 or just raw)
+                # Better: Just user provides raw physical index hint or we assume it's relative
+                # Let's assume the user provides a "safe" page index to skip to.
+                hint = config.get("start_page_hint")
+                if hint > current_search_idx:
+                    current_search_idx = hint
+            
             # Use a distinctive substring of the title
-            search_term = config["title"]
+            search_term = config.get("search_text", config["title"])
             
             # Special handling for potentially "typo'd" titles (can be moved to config later if needed)
             if "TYPES OF MIGRANT" in search_term: 
                 search_term = "CATEGORIES OF MIGRATION"
 
-            page_idx = self.find_chapter_start(search_term, current_search_idx)
+            # Use strict mode if a specific search_text was provided (implies we know the exact header)
+            use_strict = "search_text" in config
+            page_idx = self.find_chapter_start(search_term, current_search_idx, strict_mode=use_strict)
             
             if page_idx is not None:
                 # If finding Preface, ensure we distinguish from TOC
@@ -170,12 +243,17 @@ class PDFPreprocessor:
                     line_text_parts.append(span["text"])
                 
                 if line_text_parts:
+                    # Clean soft hyphens
+                    line_text_parts = [p.replace('\xad', '').replace('\u00ad', '') for p in line_text_parts]
                     full_line = " ".join(line_text_parts).strip()
                     
                     # NORMALIZE HERE
                     full_line = self.normalize_text(full_line)
                     
                     if not full_line: continue
+                # We normalize first, but keep soft hyphens for the block joiner
+                
+                # ... check filters ... (keep existing filters)
 
                     # 3. Regex Filter: Isolated Numbers
                     if re.match(r'^[\s-]*\d+[\s-]*$', full_line) or re.match(r'^page\s+\d+$', full_line, re.IGNORECASE):
@@ -188,13 +266,59 @@ class PDFPreprocessor:
                              if len(full_line) < len(chapter_context.title) + 10: continue
                         # Check "Chapter X"
                         if f"Chapter {chapter_context.config.get('num', '')}" in full_line: continue
+                        
+                        # Check "Book X" (Roman/Digit) - Generic safe catch
+                        if re.match(r'^Book\s+[IVX\d]+$', full_line, re.IGNORECASE): continue
+
+                        # Check Main Book Title (Metadata)
+                        main_title = self.config.get("metadata", {}).get("title", "")
+                        if main_title and len(main_title) > 5 and main_title.lower() in full_line.lower():
+                            # Only if it looks like a header (short-ish compared to full line?) 
+                            # Or just remove it if it matches?
+                            # Use length heuristic to avoid deleting sentences mentioning the title.
+                            if len(full_line) < len(main_title) + 20:
+                                continue
 
                     block_content.append(full_line)
             
             if block_content:
-                clean_text.append(" ".join(block_content))
+                # clean_text.append(" ".join(block_content))
+                clean_text.append(self.smart_join(block_content))
                 
         return "\n\n".join(clean_text)
+
+    def smart_join(self, lines):
+        """
+        Joins lines of text, handling hyphenation logic.
+        - Removes soft hyphens (\\u00ad) and joins immediately.
+        - Detects hard hyphens (-) at end of line followed by lowercase, removes hyphen and joins.
+        - Otherwise joins with space.
+        """
+        if not lines: return ""
+        
+        # Start with first line
+        result = [lines[0]]
+        
+        for line in lines[1:]:
+            prev = result[-1]
+            
+            # 1. Soft Hyphen: definite split, always merge
+            if prev.endswith('\u00ad'):
+                result[-1] = prev[:-1] + line
+                continue
+                
+            # 2. Hard Hyphen: heuristic merge
+            # If prev ends with (-) (and not ' -' or '--') and next starts with lowercase
+            if prev.endswith('-') and not prev.endswith(' -') and not prev.endswith('--'):
+                 if line and line[0].islower():
+                     # Assume split word: "medi-" + "cal" -> "medical"
+                     result[-1] = prev[:-1] + line
+                     continue
+            
+            # Default: New "word" sequence, join with space
+            result.append(line)
+            
+        return " ".join(result)
 
     def run(self):
         self.locate_chapters()
@@ -204,6 +328,11 @@ class PDFPreprocessor:
             return
 
         for chap in self.chapters:
+            # Check for skip type
+            if chap.config.get("special_type") == "skip":
+                print(f"  Skipping chapter: {chap.title}")
+                continue
+
             # print(f"Processing {chap.full_header}...")
             # Safety clamp
             end = chap.end_page_idx if chap.end_page_idx else len(self.doc)
@@ -218,6 +347,64 @@ class PDFPreprocessor:
         
         print(f"[{self.filename}] Footnotes removed: {self.footnote_count}")
         self.export_pdf(out_path)
+        
+        # Output JSON
+        json_path = os.path.join(self.output_dir, base_name.replace('.pdf', '.json'))
+        self.export_json(json_path)
+
+        # Output Text (Bridge Format)
+        text_path = os.path.join(self.output_dir, base_name.replace('.pdf', '.txt'))
+        self.export_text(text_path)
+
+    def export_json(self, path):
+        toc_data = []
+        
+        for chap in self.chapters:
+            if chap.config.get("special_type") == "skip": continue
+            
+            # Reconstruct full text for stats
+            full_text = "\n\n".join(chap.content)
+            
+            # Paragraph count: split by \n\n and count non-empty
+            paras = [p for p in full_text.split('\n\n') if p.strip()]
+            
+            toc_data.append({
+                "chapter_title": chap.full_header,
+                "character_count": len(full_text),
+                "paragraph_count": len(paras)
+            })
+            
+        metadata = self.config.get("metadata", {})
+        title = metadata.get("title", self.filename)
+        
+        output = {
+            "project_name": title,
+            "title": title,
+            "author": metadata.get("author", "Unknown"),
+            "toc": toc_data
+        }
+        
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(output, f, indent=2)
+        print(f"Exported JSON stats to {path}")
+
+    def export_text(self, path):
+        """Exports content to a single text file with '# Chapter' markers for the audiobook generator."""
+        with open(path, 'w', encoding='utf-8') as f:
+            for chap in self.chapters:
+                if chap.config.get("special_type") == "skip": continue
+                
+                # Write Header Marker
+                f.write(f"# {chap.full_header}\n\n")
+                
+                # Write Content
+                full_text = "\n\n".join(chap.content)
+                f.write(full_text)
+                
+                # Spacer
+                f.write("\n\n")
+        
+        print(f"Exported Bridge Text to {path}")
 
     def export_pdf(self, path):
         # Register TrueType Font for Unicode support (Windows path)
@@ -254,6 +441,7 @@ class PDFPreprocessor:
         story.append(Paragraph("Table of Contents", style_h1))
         story.append(Spacer(1, 20))
         for chap in self.chapters:
+             if chap.config.get("special_type") == "skip": continue
              story.append(Paragraph(chap.full_header, style_toc))
         story.append(PageBreak())
 
@@ -306,12 +494,23 @@ if __name__ == "__main__":
     parser.add_argument("--input_dir", default="input", help="Directory containing source PDFs")
     parser.add_argument("--output_dir", default="output", help="Directory to save cleaned PDFs")
     parser.add_argument("--config_dir", default="configs", help="Directory containing JSON configs")
+    parser.add_argument("--file", help="Specific PDF file to process (filename or path)")
     args = parser.parse_args()
 
     if not os.path.exists(args.output_dir):
         os.makedirs(args.output_dir)
 
-    pdf_files = glob.glob(os.path.join(args.input_dir, "*.pdf"))
+    if args.file:
+        # Check if full path provided or just filename in input_dir
+        if os.path.exists(args.file):
+            pdf_files = [args.file]
+        else:
+            pdf_files = [os.path.join(args.input_dir, args.file)]
+            if not os.path.exists(pdf_files[0]):
+                 print(f"File not found: {args.file}")
+                 exit(1)
+    else:
+        pdf_files = glob.glob(os.path.join(args.input_dir, "*.pdf"))
     
     if not pdf_files:
         print(f"No PDF files found in {args.input_dir}")
